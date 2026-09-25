@@ -1,0 +1,12 @@
+@media (max-width:768px){
+  .topbar{gap:8px;padding:0 12px}
+  .logo{font-size:1.1rem}
+  .btn-ghost{padding:5px 8px;font-size:.85rem}
+  .split{display:block}
+  .mapwrap{display:none;position:fixed;inset:60px 0 0;height:auto;z-index:10}
+  body.show-map .mapwrap{display:block}
+  body.show-map .list{display:none}
+  .card img{width:100px;height:100px}
+  .sheet>img{height:200px}
+  .toggle{display:block;position:fixed;z-index:30;left:50%;bottom:18px;transform:translateX(-50%);padding:11px 22px;border:0;border-radius:24px;background:var(--ink);color:#fff;box-shadow:0 4px 12px #0004}
+}

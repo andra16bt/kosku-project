@@ -1,0 +1,18 @@
+:root{--green:#00A86B;--green-d:#008a58;--bg:#F5F7FA;--ink:#2D3748;--muted:#718096;--line:#E2E8F0;--r:12px}
+*{box-sizing:border-box;margin:0}
+body{font-family:Inter,Roboto,system-ui,sans-serif;color:var(--ink);background:var(--bg)}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer}
+[hidden]{display:none!important}
+:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+
+.topbar{position:sticky;top:0;z-index:20;height:60px;display:flex;align-items:center;gap:16px;padding:0 20px;background:#fff;border-bottom:1px solid var(--line)}
+.logo{font-weight:800;font-size:1.4rem;color:var(--ink);text-decoration:none}
+.logo span{color:var(--green)}
+.search{flex:1;display:flex;max-width:560px}
+.search input{flex:1;min-width:0;padding:9px 14px;border:1px solid var(--line);border-radius:8px 0 0 8px}
+.search button{padding:0 18px;border:0;background:var(--green);color:#fff;border-radius:0 8px 8px 0;font-weight:600}
+
+.hero{padding:22px 20px 10px;background:linear-gradient(135deg,#e3f7ee,#fff)}
+.hero h1{font-size:1.5rem}
+.hero p{color:var(--muted);margin:4px 0 12px}
