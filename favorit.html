@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kos Favorit Saya – KosKu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    />
+    <link rel="stylesheet" href="css/cari.css" />
+    <link rel="stylesheet" href="css/favorit.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-inner">
+        <div class="left">
+          <a class="brand" href="index.html">Kos<span>Ku</span></a>
+          <nav class="nav">
+            <a href="index.html">Beranda</a><a href="cari.html">Cari Kos</a
+            ><a class="on" href="favorit.html"
+              >Favorit <span class="badge" id="favCount">0</span></a
+            >
+          </nav>
+        </div>
+        <form class="hsearch" action="cari.html">
+          <span class="material-symbols-outlined">search</span>
+          <input
+            name="q"
+            placeholder="Cari lokasi, kampus, atau nama kos"
+            aria-label="Cari kos"
+          />
+        </form>
+        <div class="city">
+          <span class="material-symbols-outlined">location_on</span>Surabaya
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="glow"></div>
+      <div class="glow b"></div>
+      <div class="wrap">
+        <nav class="crumb">
+          <a href="index.html">Beranda</a
+          ><span class="material-symbols-outlined" style="font-size: 15px"
+            >chevron_right</span
+          ><span class="cur">Kos Favorit Saya</span>
+        </nav>
+
+        <div class="pagehead">
+          <div>
+            <div class="tagbadge">
+              <span
+                class="material-symbols-outlined"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >favorite</span
+              >Koleksi Terpilih Kamu
+            </div>
+            <h1>Kos Favorit Saya</h1>
+            <p class="pagedesc">
+              Kos yang kamu simpan saat menjelajah KosKu, tersimpan di browser
+              ini agar mudah ditinjau kembali.
+            </p>
+          </div>
+        </div>
+
+        <div class="filterbar">
+          <div class="ftabs" id="ftabs"></div>
+          <div class="findicator">
+            <span class="dot"></span><b id="countText">0 Kos Tersimpan</b>
+          </div>
+        </div>
+
+        <div class="grid" id="grid"></div>
+
+        <div class="empty" id="empty">
+          <div class="eicon">
+            <span class="material-symbols-outlined" style="font-size: 34px"
+              >favorite_border</span
+            >
+          </div>
+          <h3 class="etitle">Belum Ada Kos Favorit</h3>
+          <p class="edesc">
+            Klik ikon hati pada kos yang kamu sukai saat menjelajah katalog
+            KosKu Surabaya agar mudah ditinjau kembali di sini.
+          </p>
+          <a class="btn-explore" href="cari.html"
+            ><span>Mulai Cari Kos di Surabaya</span
+            ><span class="material-symbols-outlined" style="font-size: 17px"
+              >arrow_forward</span
+            ></a
+          >
+        </div>
+      </div>
+    </main>
+
+    <div class="toast" id="toast">
+      <span class="material-symbols-outlined">check_circle</span
+      ><span id="toastMsg">Kos dihapus dari favorit.</span>
+    </div>
+
+    <script src="js/storage.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/favorit.js"></script>
+  </body>
+</html>
