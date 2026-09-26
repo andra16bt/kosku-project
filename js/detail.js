@@ -26,10 +26,11 @@ function updateFavUI(k) {
   const on = Fav.has(k.id);
   $("#favTop").classList.toggle("on", on);
   $("#favTop").innerHTML = icon("favorite");
-  $("#favBtn").classList.toggle("on", on);
-  $("#favBtn").innerHTML =
-    (on ? icon("favorite") : icon("favorite_border")) +
-    (on ? "Tersimpan di Favorit" : "Simpan ke Favorit");
+  const band = $("#favBand");
+  band.className = "favband " + (on ? "on" : "off");
+  band.innerHTML = on
+    ? icon("favorite") + "Tersimpan di Favorit"
+    : icon("favorite_border") + "Simpan ke Favorit";
   $("#favCount").textContent = Fav.get().length;
 }
 
@@ -134,6 +135,7 @@ fetch("data/kos.json")
     </div>
 
     <aside><div class="book">
+      <button class="favband" id="favBand"></button>
       <div class="pricebox">
         <span class="pcap">Mulai Dari</span>
         <div class="pflex"><span class="pval" id="priceVal">${rp(k.hargaBulanan)}</span><span class="psub" id="priceUnit">/ bulan</span></div>
@@ -148,7 +150,7 @@ fetch("data/kos.json")
       </div>
       <div class="roombox">${icon("door_front")}<div><b>Sisa ${k.sisaKamar} Kamar Tersedia</b><small>Segera hubungi pengelola untuk survei lokasi</small></div></div>
       <div class="pricelist"><span>Deposit: <b>${rp(k.hargaBulanan / 2)}</b></span><span>Listrik &amp; air: <b>Sesuai pemakaian</b></span></div>
-      <button class="btn btn-fav" id="favBtn"></button>
+      <a class="btn btn-wa" target="_blank" rel="noopener" href="${waLink(k)}">${icon("chat")}Hubungi via WhatsApp</a>
       <a class="btn btn-out" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=${k.lat},${k.lng}">${icon("map")}Buka di Google Maps</a>
     </div></aside>
     </div>`;
@@ -164,14 +166,14 @@ fetch("data/kos.json")
     );
     $("#dlgClose").addEventListener("click", () => $("#dlg").close());
 
-    // Favorit (sinkron tombol atas & sidebar)
+    // Favorit (pita status di atas kartu, sinkron dengan tombol hati di judul)
     updateFavUI(k);
     const toggleFav = () => {
       Fav.toggle(k.id);
       updateFavUI(k);
     };
     $("#favTop").addEventListener("click", toggleFav);
-    $("#favBtn").addEventListener("click", toggleFav);
+    $("#favBand").addEventListener("click", toggleFav);
 
     // Bagikan tautan
     $("#shareBtn").addEventListener("click", () => {

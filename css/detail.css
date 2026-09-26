@@ -510,6 +510,30 @@ aside {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  overflow: hidden;
+}
+.favband {
+  margin: -22px -22px 0;
+  padding: 13px 22px;
+  font-weight: 700;
+  font-size: 0.82rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: calc(100% + 44px);
+  text-align: center;
+}
+.favband.off {
+  background: var(--low);
+  color: var(--mut);
+}
+.favband.on {
+  background: #ffe3e3;
+  color: var(--err);
+}
+.favband:hover {
+  filter: brightness(0.97);
 }
 .pcap {
   font-size: 0.68rem;
@@ -630,6 +654,13 @@ aside {
 .btn-fav.on {
   background: #ffebeb;
   color: var(--err);
+}
+.btn-wa {
+  background: #25d366;
+  color: #fff;
+}
+.btn-wa:hover {
+  background: #1ebc59;
 }
 .btn-out {
   background: var(--low);

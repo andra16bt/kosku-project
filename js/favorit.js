@@ -58,7 +58,10 @@ function card(k) {
       </div>
       <div class="pact">
         <div class="prow"><span class="pval">${rp(k.hargaBulanan)}</span> <span class="punit">/ bulan</span></div>
-        <a class="btn-detail" href="detail.html?id=${k.id}"><span>Lihat Detail</span>${icon("arrow_forward")}</a>
+        <div style="display:flex;gap:6px">
+          <a class="btn-wa-mini" href="${waLink(k)}" target="_blank" rel="noopener" aria-label="Hubungi via WhatsApp">${icon("chat")}</a>
+          <a class="btn-detail" href="detail.html?id=${k.id}"><span>Lihat Detail</span>${icon("arrow_forward")}</a>
+        </div>
       </div>
     </div></article>`;
 }
