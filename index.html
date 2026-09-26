@@ -19,6 +19,7 @@
       href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
     />
     <link rel="stylesheet" href="css/landing.css" />
+    <link rel="stylesheet" href="css/transitions.css" />
   </head>
   <body>
     <header class="header">
@@ -95,7 +96,7 @@
         </div>
       </section>
 
-      <section class="section">
+      <section class="section" data-animate>
         <div class="shead">
           <div>
             <div class="tag"><i></i>Surabaya Terpopuler</div>
@@ -110,7 +111,7 @@
         <div class="grid" id="grid"></div>
       </section>
 
-      <section class="features">
+      <section class="features" data-animate>
         <div class="container">
           <div class="fhead">
             <span class="tag">Kenapa KosKu?</span>
@@ -153,7 +154,7 @@
         </div>
       </section>
 
-      <section class="teaser">
+      <section class="teaser" data-animate>
         <div class="tcard">
           <div>
             <span class="tag"><i></i>Split Map View</span>
@@ -213,5 +214,6 @@
     <script src="js/storage.js"></script>
     <script src="js/util.js"></script>
     <script src="js/landing.js"></script>
+    <script src="js/transitions.js"></script>
   </body>
 </html>
